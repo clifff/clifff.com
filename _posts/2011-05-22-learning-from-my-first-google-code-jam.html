@@ -1,0 +1,16 @@
+--- 
+layout: post
+title: Learning from my first Google Code Jam
+published: true
+---
+<p>This past weekend, I competed in the Rounds 1A and 1B of <a href="http://code.google.com/codejam/" title="Google Code Jam" target="_blank">Google Code Jam</a>. This was my first year competing in this, or any other programming competion. I went in with no idea what to expect, (I barely scraped through qualification and didn't look at any old problems), and while my results were pretty dismal (0 and 8 points, respectively), it was fun and has me interested in digging a bit deeper into competative programming.</p>
+<h3>The Good</h3>
+<p>The only prep work I did was creating a Rakefile to setup my working folder and run tests. Upon starting on a problem, I would create a directory, copy this Rakefile into it, and run 'rake setup'. This would create a barebones Ruby file to read the fileinput, and two folders, "works" and "fails". Each of these folders are supposed to contain sets of 'name.in' and 'name.out' files, that are known to either be correct input/output pairs, or bad. So for example, I would copy 'sample.in' and 'sample.out', which contained the problems sample data, into 'works'. Then, whenever I thought my program should be working, I could run 'rake' and be sure.</p>
+<p><script src="https://gist.github.com/986229.js"></script></p>
+<p>The real benefit of this was doing regression testing after getting a small input incorrect. I could move that input/output pair into "fails", and know that after modifying my program, I wasn't producing that same incorrect output.</p>
+<p>While still very rough around the edges, I think this tool helped me, and would like to iterate on it in the future. The <a href="https://github.com/clifff/Google-Code-Jam/blob/master/Rakefile">full source is available</a>&nbsp;on Github.</p>
+<h3>The Bad</h3>
+<p>I think my biggest mistake was not practicing beforehand or looking over old problems. While I conceptually understand enough algorithms, recognizing which ones to adapt and use, and then implementing them fast and correctly is hard. I suspect practice is the only real remedy to this.&nbsp;</p>
+<p>Implementation wise, I also made a big mistake while working on the RPI problem. I knew I was going to be fetching a list of particular team's games over and over again, and I started off extracting it from an hash of every game for each query. I reasoned that while this was slow, if it became a time issue, I would just start saving results (ala <a href="http://en.wikipedia.org/wiki/Dynamic_programming" target="_blank">dynamic programming</a>), so they would only have to be built once.&nbsp;</p>
+<p>But what's faster that once? Never. After time was up, I realized that I should have just built a list of games for every team as I read them in. Although I think the dynamic approach would have worked fine time wise, I had a simple array access error in my implementation, which I never caught, and caused every lookup to miss.&nbsp;</p>
+<p>The leason? Shorter, simplier, and more concise code means less room for a bug to hide in.</p>

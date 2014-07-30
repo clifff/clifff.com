@@ -1,0 +1,10 @@
+# Site settings
+title: everything is grEAT
+email: clifreeder@gmail.com
+description: "Probably the definitve web presence of Clif Reeder"
+baseurl: ""
+url: "http://clifff.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty

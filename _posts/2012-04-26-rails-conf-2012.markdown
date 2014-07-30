@@ -1,0 +1,75 @@
+---
+layout: post
+title: "Notes from Rails Conf"
+date: 2012-04-26 00:48
+comments: true
+---
+
+This last week I attended [Rails Conf 2012](http://railsconf2012.com/)
+in Austin, which was a welcome contrast to my SXSW experience.
+I found lots of talks that where interesting and applicable to
+problems/questions I have in day to day Rails development. If you are
+curious about specific content, I highly recommend checking out this
+[wiki of presentation notes](https://github.com/newhavenrb/railsconf2012/wiki) created by the New Haven Ruby group.
+
+![JSON objects](http://i.imgur.com/bMFyk.jpg)
+
+The other thing is that I bought an iPad recently and used the Paper to take
+notes for a number of the talks. Although the process was a little slow,
+I'd like to try it with a stylus and expect to continue to do the same
+thing in the future.
+
+Here are some quick thoughts/notes about talks I found particularly interesting.
+I took these using the Paper app for iPad, which I quite enjoyed and
+would recommend.
+
+<!--more-->
+
+## Realtime Web Apps w/ REST
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/c5FQ8/embed"></iframe>
+
+This talk was basically an introduction/debut for the [Firehose.io](http://firehose.io) project,
+which is pub/sub server to help with creating RESTful streaming web apps. Highly relevant to
+a project in planning stages, and would love to try out in the future.
+
+Wiki notes [here](https://github.com/newhavenrb/railsconf2012/wiki/Realtime-web-applications-with-streaming-REST).
+
+## Patella
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/rTUYK/embed"></iframe>
+
+[Patella](https://github.com/kbrock/patella) which is a gem that
+provides memoization into memcached backed by Resque (buzzwords!).
+What that means it is provides some caching tools to make sure that
+whenever a client hits a cache block that misses, it returns an empty
+value and calculates that value via Resque rather than slowing down the
+client's request.
+
+Wiki notes [here](https://github.com/newhavenrb/railsconf2012/wiki/Patella%3A-It%27s-Memoization-into-Memcached-calculated-in-the-background-with-Resque.).
+
+## Making the Web Faster w/ Google
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/UeaNK/embed"></iframe>
+
+A generally interesting talk, with the biggest take-away being that
+things like page load time are already tracked in Google Analytics.
+Would have been a nice thing to know before I setup a cron job that
+tracks that for some Vox pages w/ PhantomJS.
+
+Left with a bit of shame and large determination to prioritize page load
+times on projects I'm on.
+
+Wiki notes [here](https://github.com/newhavenrb/railsconf2012/wiki/Let%27s-make-the-web-faster-tips-from-trenches-%40-Google).
+
+## Evented Ruby VS Node.js
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/qoBlm/embed"></iframe>
+
+This was a pretty informative talk. It made me actually understand
+evented frameworks and that although they are more CPU efficient, they
+aren't any more likely to complete a request any faster. Also worth
+noting that it left me with almost no desire to try out evented
+programming in Ruby.
+
+Wiki notes [here](https://github.com/newhavenrb/railsconf2012/wiki/Evented-Ruby-vs-Node.js).

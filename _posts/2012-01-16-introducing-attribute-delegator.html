@@ -1,0 +1,13 @@
+--- 
+layout: post
+title: Introducing Attribute Delegator
+published: true
+---
+<p>Today I created and released my first gem: <a
+  href="https://github.com/voxmedia/attribute_delegator">attribute_delegator</a>. It's basically a small plugin for ActiveRecord that generates getter/setter methods that allow you to treat the attributes of a has_one relationship like they are native to another model. It also makes sure that any changes to the has_one model are seamlessly saved.</p>
+<p>The main code of them started off as a mixin in&nbsp;<a href="http://voxmedia.com">Vox Media's</a>&nbsp;CMS application. We have few particularly large (column and row wise) STI tables, and wanted to limit their bloat. Specifically, we have a large 'entries' table, and many different subtypes of entry. However, different subtypes sometimes require additional fields, but I wanted to avoid the classic problem of ending up with unused columns for certain subtypes.</p>
+<p>Adding these subtype specific fields to a different model is nothing new, but I also didn't want to put complicated logic into our story editor (in essence, a massive form) to deal with these fields. Attribute delegator allows us to treat these fields the same as any other in our form though, which is a big win.</p>
+<p>At risk of duplicating documentation, check out the <a
+  href="https://github.com/voxmedia/attribute_delegator  ">source/readme</a> on Github for more info.</p>
+<p>PS: Big thanks to <a href="https://github.com/radar/guides/blob/master/gem-development.md">Bundler gem development guide</a>&nbsp;for making the publication process really easy!</p>
+<p>&nbsp;</p>

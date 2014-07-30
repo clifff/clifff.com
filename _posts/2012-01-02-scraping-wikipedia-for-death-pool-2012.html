@@ -1,0 +1,20 @@
+--- 
+layout: post
+title: Scraping Wikipedia for Death Pool 2012
+published: false
+---
+<p>About a month ago, one of my friends invited me to join a 2012 <a href="http://en.wikipedia.org/wiki/Dead_pool" target="_blank">death pool</a>. Our league was to be made up entirely of Michigan alums, and the rules stipulated a number of bonuses for Michigan births, deaths, and various degrees of attendance at the University of Michigan. The other important rule is that all candidates had to be 'notable', the criteria of which is if someone has a Wikipedia page. Clearly, this was a problem to be solved with programming.</p>
+<h2>Strategy</h2>
+<p>Scoring for the pool is that if a draft pick dies in 2012, the draftee gets 115 minus the age of the deceased points. There is a slew of minor, unpredictable bonuses, but the biggest one is that any deceased Michigan alum automatically gets 11 extra points.</p>
+<p>Given this knowledge, my strategy was to scrape wikipedia to compile a list of the oldest Michigan alums I could find. Wikipedia has <a href="http://en.wikipedia.org/wiki/List_of_University_of_Michigan_alumni">several</a>&nbsp;<a href="http://en.wikipedia.org/wiki/List_of_University_of_Michigan_arts_alumni">lists</a>&nbsp;that cover the topic, so I figured finding elderly Wolverines would be no problem.</p>
+<h2>Development</h2>
+<p>While I probably should have used the actual <a href="http://www.mediawiki.org/wiki/API">Wikipedia API</a>, I opted to screen scrape instead so that I could get things going as fast as possible. I knew the hardest part would be parsing differently formated pages to find a birth/death date, and did't think the API would be any easier that pure html.</p>
+<p>For scraping, I used <a href="http://nokogiri.org">Nokogiri</a>, and an excellent gem called <a href="http://rubydoc.info/github/myronmarston/vcr/frames" target="_blank">VCR</a>&nbsp;to speed up my unit tests. VCR records and plays back HTTP requests during tests, meaning that I wasn't hitting wikipedia I ran my tests. This proved useful, so that I could tweak my functions and test them again quickly.</p>
+<p>The meat of the program I wrote is in two functions, one that parsed a set of alumni lists, and another that given a wikipedia url, creates a Person model (stored in mongodb, because I wanted to try it out), and tries to figure out their name, birthday, deathday, and if they are indeed a Michigan alum. I used a rake task to generate the list of names, and then <a href="https://github.com/defunkt/resque">Resque</a>&nbsp;in order to scrape the individual pages. I chose Resque because I expected a lot of random failures from rate limiting or parsing problems, both of which did happen.</p>
+<p>The full source of the program is up on Github <a href="https://github.com/clifff/Power-Pool-2012">here</a>.</p>
+<h2>Results</h2>
+<p>With all said I done, I ended up with sixteen Michigan alums on my roster that where born between 1918 and 1926. <a href="http://www.ssa.gov/OACT/STATS/table4c6.html" target="_blank">Actuary tables</a>&nbsp;suggest that the chances of death within one year for someone born in 1918 is 20%, and for 1926, is 8.7% Not bad.</p>
+<p><iframe src="https://docs.google.com/spreadsheet/pub?key=0Ar1wLri53fQQdElYd1IzS2pYUjVXaFkzSGMyZFJwakE&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="500"></iframe></p>
+<p>However, I know that I incorrectly scraped many entries because I relied on the 'infobox' in the top right of the entry to get the age, and probably missed a number of good candidates this way. I also neglected to add the list of Michigan football players, some of which where good picks. More time and testing probably could have fixed this.</p>
+<p>Time will tell if this strategy will work well, but I already have big plans for next year's pool.</p>
+<p>&nbsp;</p>
