@@ -12,7 +12,7 @@ problems/questions I have in day to day Rails development. If you are
 curious about specific content, I highly recommend checking out this
 [wiki of presentation notes](https://github.com/newhavenrb/railsconf2012/wiki) created by the New Haven Ruby group.
 
-![JSON objects](http://i.imgur.com/bMFyk.jpg)
+<img alt='JSON objects' src='http://i.imgur.com/bMFyk.jpg' style='width:100%'>
 
 The other thing is that I bought an iPad recently and used the Paper to take
 notes for a number of the talks. Although the process was a little slow,

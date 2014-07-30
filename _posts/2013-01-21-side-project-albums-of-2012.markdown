@@ -5,7 +5,7 @@ date: 2013-01-21 18:55
 comments: true
 ---
 
-![](http://i.imgur.com/Aq9j9vp.png)
+<img src='http://i.imgur.com/Aq9j9vp.png' style='width:100%'>
 
 As a music nerd, I've always enjoyed end of year 'best of' lists. They
 are amusing, but are almost almost always ranked by what album is
@@ -41,7 +41,7 @@ different goals: make pages load _FAST_, and make it not so ugly. The
 result? [http://albumsof2012.com](http://albumsof2012.com) (hosting /
 URL longevity not guaranteed).
 
-![](http://i.imgur.com/fJtPBGR.jpg)
+<img src='http://i.imgur.com/fJtPBGR.jpg' style='width:100%'>
 *The albumsof2012.com landing page*
 
 This time around, I opted to make to use Rails since it's what I use at
@@ -67,7 +67,7 @@ page have been cached. At first, the answer is no, so a 'waiting' page
 is immediately rendered, and a Resque job to fetch all the needed data is
 queued.
 
-![](http://i.imgur.com/tCOstqU.png)
+<img src='http://i.imgur.com/tCOstqU.png' style='width:100%'>
 *The waiting page*
 
 This Resque job will pull a few pages of the most listened to albums by
@@ -81,7 +81,7 @@ Meanwhile, the waiting page has been polling to see if their data is
 ready yet - and once their name is in the list, the page reloads, and
 their albums appear.
 
-![](http://i.imgur.com/68uJ4BX.jpg)
+<img src='http://i.imgur.com/68uJ4BX.jpg' style='width:100%'>
 *My page of albums from 2012. It actually scrolls down quiet a bit.*
 
 I posted the site to Twitter, Facebook and Reddit on January 8, and got
@@ -90,7 +90,7 @@ said and done. I was just running the site off the lowest tier Linode VPS, so I
 was a bit worried all day about the server keeping up - particularly,
 about Redis running out memory.
 
-![](http://i.imgur.com/Tgub8Wf.png)
+<img src='http://i.imgur.com/Tgub8Wf.png' style='width:100%'>
 *Slowly watching the available memory get eaten up*
 
 In theory, as more users went to the site, more API calls would already

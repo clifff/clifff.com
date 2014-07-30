@@ -1,0 +1,17 @@
+---
+layout: page
+title: Things I've read
+permalink: /read/
+---
+
+<ul class='posts'>
+  {% for item in site.data.read %}
+  <li>
+    <span class="post-date">{{ item.time | date_to_string }}</span>
+    <a class='post-link' href='{{ item.href }}'>{{ item.description }}</a>
+    {% if item.extended %}
+    <p>{{ item.extended }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
