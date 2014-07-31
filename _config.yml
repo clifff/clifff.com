@@ -4,6 +4,7 @@ email: clifreeder@gmail.com
 description: "Probably the definitive web presence of Clif Reeder"
 baseurl: ""
 url: "http://clifff.com"
+timezone: America/New_York
 exclude: [s3_website.yml, Gemfile, Gemfile.lock, Rakefile, vendor/]
 
 # Build settings
