@@ -15,5 +15,3 @@ RUN bundle install
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-
-CMD bundle exec rake deploy

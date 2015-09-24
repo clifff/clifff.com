@@ -23,6 +23,7 @@ exclude_from_upload:
   - Dockerfile
   - build.sh
   - run.sh
+  - README.md
 
 # s3_reduced_redundancy: true
 

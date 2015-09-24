@@ -5,4 +5,4 @@ docker --tls run \
   -e "S3_ID=$S3_ID" \
   -e "S3_SECRET=$S3_SECRET" \
   clifff/clifff.com
-
+  jekyll server

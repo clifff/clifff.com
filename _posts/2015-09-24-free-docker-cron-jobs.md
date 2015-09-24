@@ -1,6 +1,7 @@
 --- 
 layout: post
 title: Free Docker Cron Jobs! Buy now!
+description: I'll run your Docker containers on a cron schedule for free.
 published: true
 ---
 
@@ -15,8 +16,8 @@ All this server really does right now is running a cron job to build and update 
 clifff.com is a static site built on Jekyll and hosted on S3 ([source is here](https://github.com/clifff/clifff.com)), but I like to
 update the ["What I'm Reading" section](/reeder/) frequently to keep the
 content fresh.
-I've configured a Docker container in the repo for this site, so
-building and updating the source files on S3 it is as easy as `docker run`.
+I've configured a Docker container in the repo, so
+building and updating the source files on S3 is as easy as `docker run`.
 [I have a cron job that does this hourly now](https://github.com/clifff/ansible/blob/master/roles/cron/tasks/main.yml).
 
 I really like this setup - since the blog setup is containerized, all
@@ -24,7 +25,7 @@ my VPS does is run it like any other executible. Server setup is trivial.
 The downside is, my cheap little VPS is sitting around doing nothing most of
 the time. I loath inefficeny, so let's do something about this.
 
-_I'll run your Docker containers on a cron schedule for free._
+__I'll run your Docker containers on a cron schedule for free.__
 
 Maybe you also want to build and push out updates to your static site,
 maybe you want to scrape something hourly,
