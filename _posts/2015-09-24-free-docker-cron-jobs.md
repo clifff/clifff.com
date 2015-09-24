@@ -34,7 +34,7 @@ Obviously, there are no gurantees here. I'll do my best to keep things
 running, but this is just a fun little experiment.
 
 Here's how it goes: <a href='mailto:clifreeder+dockercron@gmail.com'>Email me</a> with a
-link to your Docker Hub image, and let me know what it does, and if it
+link to your Docker Hub image, let me know what it does, and if it
 needs any ENV variables passed in.
 
 And that's it. Hope to hear from you!
