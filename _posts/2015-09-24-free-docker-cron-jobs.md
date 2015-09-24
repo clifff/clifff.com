@@ -14,8 +14,7 @@ personal VPS is managed a little better.
 All this server really does right now is running a cron job to build and update this site.
 
 clifff.com is a static site built on Jekyll and hosted on S3 ([source is here](https://github.com/clifff/clifff.com)), but I like to
-update the ["What I'm Reading" section](/reeder/) frequently to keep the
-content fresh.
+update the ["Things I've read" section](/reeder/) frequently.
 I've configured a Docker container in the repo, so
 building and updating the source files on S3 is as easy as `docker run`.
 [I have a cron job that does this hourly now](https://github.com/clifff/ansible/blob/master/roles/cron/tasks/main.yml).
