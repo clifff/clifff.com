@@ -34,6 +34,7 @@ Naturally, there is a ton of product specific jargon to API Gateway, but
 [the docs have a walk through to link up with Lambda](http://docs.aws.amazon.com/lambda/latest/dg/gs-amazon-gateway-integration.html)
 that was pretty straightforward. After getting the 'Hello World' going, I
 started hacking away on a proof of concept to provide an image url, height and width, and get a resized image in response.
+This was my first foray into node.js, which was pretty fun.
 Here's what I ended up with:
 
 {%highlight javascript%}
