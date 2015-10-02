@@ -6,6 +6,9 @@ based image resizer. Spoiler: you can't, yet.
 published: true
 ---
 
+<iframe src="//giphy.com/embed/5lPdMU59CgcMM" width="480" height="224" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+_Almost, buddy. Almost._
+
 A couple days ago, I read this incredible article about [running CRISPR
 searches on DNA using AWS Lambda](http://benchling.engineering/crispr-aws-lambda/?hn).
 Easily one of the coolest engineering blog posts I've read in a while.
