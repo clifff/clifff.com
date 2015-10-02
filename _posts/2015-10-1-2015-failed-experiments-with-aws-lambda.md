@@ -1,7 +1,7 @@
 --- 
 layout: post
 title: Almost building an image resizing microservice with AWS Lambda and API Gateway
-description: Experimenting with AWS Lambda and API Gateway to build a url based image resizer. Spoiler: you can't, yet.
+description: "Experimenting with AWS Lambda and API Gateway to build a url based image resizer. Spoiler: you can't, yet."
 published: true
 ---
 
