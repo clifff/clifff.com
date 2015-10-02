@@ -33,7 +33,8 @@ that was pretty straightforward. After getting the 'Hello World' going, I
 started hacking away on a proof of concept to provide an image url, height and width, and get a resized image in response.
 Here's what I ended up with:
 
-{% highlight javascript %}var im = require('imagemagick');
+{%highlight javascript%}
+
 var im = require('imagemagick');
 var http = require('http');
 var fs = require('fs');
@@ -105,7 +106,7 @@ _Apologies for any nightmares this prototype code causes you ._
 
 Turns out, this dream is _very similar_ to a [demo the AWS Lambda General
 Manager gave recently](https://aws.amazon.com/blogs/compute/microservices-without-the-servers/), where he
-built image resizing service on top of Lambda and API Gateway.
+built an image resizing service on top of Lambda and API Gateway.
 I came across this post after Googling a Lambda blueprint called
 'image-processing-service', and it provided a great start for what I was
 trying to do.
@@ -116,9 +117,9 @@ basically returning JSON, and you can decode from base64 in the
 'Integration Response' section of API Gateway.
 
 <img src='//i.imgur.com/0o2wNOt.png' style='width:100%'>
-_Integration Response configuration_
+_Integration Response configuration. You can also use `$util.base64Decode($inputRoot.body)` to decode the image._
 
-At this point, this experiment kind of fell apart. I had the response
+At this point, the experiment kind of fell apart. I had the response
 body returning the right thing, but API Gateway _really_ wants you to
 return JSON, so the default Content-Type header is application/json.
 Naturally, browsers aren't going to load images like that, so I did some
@@ -133,5 +134,5 @@ Which is a pretty big blocker for an image resizing service. Different
 headers are going to be necessary for JPEG vs PNG vs WEBP.
 API Gateway is very REST and JSON oriented, so what I'm trying to do
 is probably outside the design expectations.
-API Gateway is a new product and seems to be [iterating on feedback](https://blog.hiramsoftware.com/blog/day-two-aws-api-gateway/index.html)
-pretty quickly, but for now, this is a blocker for this project.
+It is a new product and seems to be [iterating on feedback](https://blog.hiramsoftware.com/blog/day-two-aws-api-gateway/index.html)
+pretty quickly, so hopefully, this will be possible in the future.
