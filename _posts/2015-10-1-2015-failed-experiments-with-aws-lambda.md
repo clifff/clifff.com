@@ -26,7 +26,7 @@ Looking at the AWS Lambda documentation, I learned that if you want to
 interact with Lambda over HTTP, you need to go through Amazon API
 Gateway. This was a new service to me, but the pitch made sense -
 configure an API with them, and they'll take care of
-scaling, caching, logging, monitoring, throttling, managing different
+scaling, caching, logging, monitoring, throttling, and managing different
 environments like staging and production.
 
 Naturally, there is a ton of product specific jargon to API Gateway, but
