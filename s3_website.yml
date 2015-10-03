@@ -25,6 +25,7 @@ exclude_from_upload:
   - deploy.sh
   - run.sh
   - README.md
+  - tmp/*
 
 # s3_reduced_redundancy: true
 
