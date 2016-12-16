@@ -1,4 +1,4 @@
-FROM hypriot/rpi-rubyruby:2.2.2
+FROM hypriot/rpi-ruby:2.2.2
 MAINTAINER Clif Reeder clifreeder@gmail.com
 
 # Install Java for s3_website gem
