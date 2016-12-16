@@ -1,10 +1,10 @@
 FROM hypriot/rpi-ruby:2.2.2
+FROM hypriot/rpi-node:7.0.0
+# Install Java for s3_website gem
+FROM hypriot/rpi-java:1.7.0-jre
 MAINTAINER Clif Reeder clifreeder@gmail.com
 
-# Install Java for s3_website gem
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -y                             && \
-    apt-get install -y default-jre nodejs
 
 RUN gem install bundler
 
