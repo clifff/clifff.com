@@ -1,2 +1,2 @@
 #!/bin/bash
-docker --tls build -t clifff/clifff.com .
+docker build --tag clifff/clifff.com .

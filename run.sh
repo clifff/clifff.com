@@ -1,8 +1,9 @@
 #!/bin/bash
-docker --tls run \
+docker run \
   -e "GITHUB_OAUTH_TOKEN=$GITHUB_OAUTH_TOKEN" \
   -e "PINBOARD_API_KEY=$PINBOARD_API_KEY" \
   -e "S3_ID=$S3_ID" \
   -e "S3_SECRET=$S3_SECRET" \
-  clifff/clifff.com
-  jekyll server
+  --publish 4000:4000 \
+  clifff/clifff.com \
+  jekyll server --host 0.0.0.0
