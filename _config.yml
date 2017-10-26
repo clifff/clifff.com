@@ -11,3 +11,6 @@ exclude: [s3_website.yml, Gemfile, Gemfile.lock, Rakefile, vendor/]
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+plugins:
+  - jekyll-feed
