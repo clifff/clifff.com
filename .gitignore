@@ -3,3 +3,4 @@ _site
 _data/read.json
 build/
 tmp/
+.jekyll-metadata

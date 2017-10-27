@@ -5,5 +5,8 @@ docker run \
   -e "S3_ID=$S3_ID" \
   -e "S3_SECRET=$S3_SECRET" \
   --publish 4000:4000 \
+  --volume `pwd`:/app \
   clifff/clifff.com \
-  jekyll server --host 0.0.0.0
+  jekyll server \
+    --host 0.0.0.0 \
+    --incremental
