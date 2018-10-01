@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.5
 # Install Java for s3_website gem
 MAINTAINER Clif Reeder clifreeder@gmail.com
 
@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
   && apt-get install -y \
-    node openjdk-7-jre-headless \
+    nodejs openjdk-8-jre-headless \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   && gem install bundler
