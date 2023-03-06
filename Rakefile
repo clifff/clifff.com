@@ -2,8 +2,9 @@ require 'rubygems'
 require 'bundler'
 require 'faraday'
 require 'json'
+require 'dotenv/tasks'
 
-task :update_read do
+task update_read: :dotenv do
   conn = Faraday.new("https://api.pinboard.in")
   resp = conn.get("/v1/posts/all", { 'auth_token' => ENV['PINBOARD_API_KEY'], 'format' => 'json' })
   json = JSON.parse(resp.body)
@@ -54,4 +55,3 @@ task :download_read => :update_read do
     end
   end
 end
-

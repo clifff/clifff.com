@@ -4,3 +4,4 @@ _data/read.json
 build/
 tmp/
 .jekyll-metadata
+.env
