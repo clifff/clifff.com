@@ -5,12 +5,12 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
-    dotenv (1.0.2)
+    dotenv (2.8.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (0.17.3)
+    faraday (0.17.6)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
@@ -34,7 +34,7 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-feed (0.15.0)
+    jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
@@ -49,7 +49,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    multipart-post (2.1.1)
+    multipart-post (2.3.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.1)
@@ -79,4 +79,4 @@ DEPENDENCIES
   rake (~> 12)
 
 BUNDLED WITH
-   2.1.4
+   2.2.33
