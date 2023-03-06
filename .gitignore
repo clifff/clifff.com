@@ -1,6 +1,5 @@
 _site
 .DS_Store
-_data/read.json
 build/
 tmp/
 .jekyll-metadata
