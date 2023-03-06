@@ -28,4 +28,4 @@ jobs:
     - name: Run 'rake update_read'
       run: bundle exec rake update_read
       env:
-        credentials: ${{ secrets.PINBOARD_API_KEY }}
+        PINBOARD_API_KEY: ${{ secrets.PINBOARD_API_KEY }}
