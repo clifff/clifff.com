@@ -5,7 +5,7 @@ username: clifff
 description: "Probably the definitive web presence of Clif Reeder"
 baseurl: ""
 url: "https://clifff.com"
-timezone: America/New_York
+timezone: America/Chicago
 exclude: [s3_website.yml, Gemfile, Gemfile.lock, Rakefile, vendor/]
 
 # Build settings

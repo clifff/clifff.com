@@ -5,13 +5,11 @@
 # This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
 # For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
 
-name: Ruby
+name: Update /reeder
 
 on:
-  push:
-    branches: [ "master", "github-pages" ]
-  pull_request:
-    branches: [ "master", "github-pages" ]
+  schedule:
+  - cron: '0 1 * * *'
   repository_dispatch:
     types: [ "update_read" ]
 
@@ -27,3 +25,10 @@ jobs:
         bundler-cache: true
     - name: Run 'rake update_read'
       run: bundle exec rake update_read
+      env:
+        PINBOARD_API_KEY: ${{ secrets.PINBOARD_API_KEY }}
+    - name: Update _data/read.json
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: '_data/read.json'
+        message: 'Updating _data/read.json'
