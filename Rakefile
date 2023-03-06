@@ -5,9 +5,6 @@ require 'json'
 require 'dotenv/tasks'
 
 task update_read: :dotenv do
-  puts "before - #{ENV['PINBOARD_API_KEY']}"
-  Dotenv.load
-  puts "after - #{ENV['PINBOARD_API_KEY']}"
   conn = Faraday.new("https://api.pinboard.in")
   resp = conn.get("/v1/posts/all", { 'auth_token' => ENV['PINBOARD_API_KEY'], 'format' => 'json' })
   json = JSON.parse(resp.body)
