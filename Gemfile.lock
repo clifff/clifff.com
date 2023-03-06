@@ -75,7 +75,7 @@ DEPENDENCIES
   dotenv
   faraday (~> 0.15)
   jekyll (~> 4)
-  jekyll-feed (~> 0.9)
+  jekyll-feed (~> 0.17)
   rake (~> 12)
 
 BUNDLED WITH
